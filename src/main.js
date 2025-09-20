@@ -20,13 +20,13 @@ form.addEventListener("submit", async (e) => {
   }
 
   clearGallery();
-  showLoader();
+  showLoader(); 
 
   try {
     const images = await getImagesByQuery(query);
     if (images.length === 0) {
       iziToast.warning({
-        message: "Sorry, there are no images matching your search query. Please try again!",
+        message: "Sorry, no images found!",
         position: "topRight",
         class: "custom-toast custom-warning"
       });
@@ -40,6 +40,7 @@ form.addEventListener("submit", async (e) => {
       class: "custom-toast custom-error"
     });
   } finally {
-    hideLoader();
+    hideLoader(); 
   }
 });
+
